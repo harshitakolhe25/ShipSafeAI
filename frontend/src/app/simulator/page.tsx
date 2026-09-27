@@ -10,7 +10,7 @@ const scenarios = [
   { id: "3", name: "API Rate Limit Exceeded", desc: "Simulates 429 Too Many Requests from a third-party dependency." },
 ];
 
-export default function Simulator() {
+function SimulatorContent() {
   const searchParams = useSearchParams();
   const scanId = searchParams.get('scan_id');
   const issueId = searchParams.get('issue_id');
@@ -180,3 +180,7 @@ export default function Simulator() {
     </div>
   );
 }
+
+
+import { Suspense } from 'react';
+export default function Simulator() { return <Suspense fallback={<div>Loading...</div>}><SimulatorContent /></Suspense>; }

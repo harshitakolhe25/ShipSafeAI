@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Bot, CheckCircle2, XCircle, Code2, Play, GitMerge, FileCode2 } from "lucide-react";
 import Editor from "@monaco-editor/react";
 
-export default function FixWorkspace() {
+function FixContent() {
   const [workflowState, setWorkflowState] = useState<"detected" | "generating" | "review" | "approved" | "testing" | "validated">("detected");
   const searchParams = useSearchParams();
   const scanId = searchParams.get('scan_id');
@@ -231,3 +231,7 @@ export default function FixWorkspace() {
     </div>
   );
 }
+
+
+import { Suspense } from 'react';
+export default function FixWorkspace() { return <Suspense fallback={<div>Loading...</div>}><FixContent /></Suspense>; }
