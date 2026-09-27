@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --background: #070B14;
+  --secondary-bg: #0B1220;
+  --card-bg: #101827;
+  --foreground: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --primary-accent: #00E5FF;
+  --secondary-accent: #8B5CF6;
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --critical: #EF4444;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-secondary: var(--secondary-bg);
+  --color-card: var(--card-bg);
+  --color-text-secondary: var(--text-secondary);
+  --color-primary: var(--primary-accent);
+  --color-accent: var(--secondary-accent);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-critical: var(--critical);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Custom scrollbar for Monaco editor and app */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--secondary-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
